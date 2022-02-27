@@ -2,6 +2,7 @@ const path = require('path')
 const hbs = require('hbs')
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 3000
 
 // defining paths
 const partialsPath = path.join(__dirname,'../templates/partials')
@@ -16,6 +17,6 @@ hbs.registerPartials(partialsPath)
 // routes
 app.use(require('../routes/'))
 
-app.listen(3000,()=>{
-    console.log('server in port 3000')
+app.listen(port,()=>{
+    console.log('server in port'+port)
 })
