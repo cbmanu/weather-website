@@ -18,5 +18,5 @@ hbs.registerPartials(partialsPath)
 app.use(require('../routes/'))
 
 app.listen(port,()=>{
-    console.log('server in port'+port)
+    console.log('server in port '+ port)
 })
