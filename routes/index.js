@@ -38,30 +38,13 @@ router.get('/weather-app', (req, res) => {
             })
         })
 })
-router.get('/help', (req, res) => {
-    res.render('help', {
-        title: 'Help',
+router.get('/contact', (req, res) => {
+    res.render('contact', {
+        title: 'Contact',
         creator: 'Manuel Carrero'
     })
 })
-router.get('/help/*', (req, res) => {
-    res.render('404', {
-        error: 'Help article not foun 404',
-        title: 'Help',
-        creator: 'Manuel Carrero'
-    })
-})
-router.get('/products', (req, res) => {
-    if (!req.query.search) {
-        return res.send({
-            error: 'You must provide a search term'
-        })
-    }
-    res.send({
-        products: []
-    })
 
-})
 router.get('*', (req, res) => {
     res.render('404', {
         error: 'Page not found',

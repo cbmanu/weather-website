@@ -25,10 +25,12 @@ footer{
 
 header h1{
     font-size: 64px;
+    font-weight: bold;
     display: inline;
 }
 header img{
     margin-left: 10px;
+    vertical-align: sub;
 }
 .links{
     margin-top: 25px;
@@ -58,4 +60,24 @@ button{
         background-color: #888888;
         color: white;
         padding: 8px;
+}
+
+.contact button{
+    width: 100%;
+}
+.links-contact{
+    display: flex;
+    align-items: center;
+
+}
+.link-contact{
+    margin: 35px 10px;
+    text-decoration: none;
+    color: #333333;
+    transition: all 0.5s ease;
+    display: block;
+}
+.link-contact:hover{
+    font-size: 1.1em;
+    color: #666666;
 }
