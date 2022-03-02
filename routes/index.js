@@ -21,11 +21,11 @@ router.get('/weather-app', (req, res) => {
             error: 'You must provide an adress!'
         })
     }
-        geocode.geocode(req.query.adress, (error, { latitude, location, longitude }={}) => {
+        geocode.geocode(req.query.adress, (error, { latitude, location, longitude} = {}) => {
             if (error) {
                 return res.send({ error })
             }
-            forecast.forecast(latitude, longitude, (error, { temperature, feelsLike, description }) => {
+            forecast.forecast(latitude, longitude, (error, { temperature, feelsLike, description, time  }) => {
                 if (error) {
                     return res.send({ error })
                 }
@@ -34,6 +34,7 @@ router.get('/weather-app', (req, res) => {
                     temperature,
                     feelsLike,
                     description,
+                    time
                 })
             })
         })
